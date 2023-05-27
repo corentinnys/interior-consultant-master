@@ -1,0 +1,48 @@
+
+body>section{ background: black}
+
+.text-white{
+    color: white;
+}
+
+/* header*/
+header{
+  display: flex;
+    justify-content: space-between;
+
+}
+header h1{
+    margin-left: 10px;
+    width: 140px;
+    text-align: center;
+    border: 1px solid white;
+}
+header nav {
+    display: flex;
+
+}
+header nav ul {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+
+
+}
+
+header nav ul li {
+   width: 120px;
+}
+
+
+header nav ul a{
+    text-decoration: none;
+
+}
+
+header nav ul li:hover a  {
+    border-bottom: 1px solid white;
+}
+
