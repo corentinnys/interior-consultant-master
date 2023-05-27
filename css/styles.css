@@ -81,3 +81,34 @@ article>div>p{
     margin-bottom: 50px;
     font-size: 1.2rem;
 }
+
+/*
+aside
+*/
+aside{
+   border-radius: 15px;
+    width: 500px;
+    position: absolute;
+    z-index: 2;
+    background: black;
+    bottom:-40px;
+    left: 1300px;
+}
+aside figure{
+    display: flex;
+
+}
+aside figure img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-top:10px;
+
+}
+aside h1, aside figcaption{
+margin-left: 20px;
+}
+aside .bolder{
+    font-size: 2rem;
+    margin:20px
+}
