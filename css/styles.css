@@ -112,3 +112,15 @@ aside .bolder{
     font-size: 2rem;
     margin:20px
 }
+
+/*
+    footer
+*/
+footer{
+    padding-top: 300px;
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 1.2rem;
+    color: gray;
+
+}
