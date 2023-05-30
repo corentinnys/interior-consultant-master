@@ -1,6 +1,6 @@
 
 @import 'variable.scss';
-
+@import 'mixin.scss';
 
 body>section,body{ background: black}
 
@@ -84,27 +84,27 @@ aside
 */
 aside{
     background: black;
-    border-radius: 15px;
+    @include border-radius(15px);
+    & figure{
+        @include display('flex');
+    }
+    & img{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-top:10px;
+    }
+    & .bolder{
+        font-size: 2rem;
+        margin:20px
+    }
 }
 
-aside figure{
-    display: flex;
 
-}
-aside figure img{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin-top:10px;
-
-}
 aside h1, aside figcaption{
 margin-left: 20px;
 }
-aside .bolder{
-    font-size: 2rem;
-    margin:20px
-}
+
 
 /*
     footer
@@ -120,10 +120,11 @@ footer{
 
 .menu-responsive{
     display: none;
-}
-.menu-responsive ul li {
-    padding: 10px;
-    font-size: 1.2em;
+    & li{
+        padding: 10px;
+        font-size: 1.2em;
+
+    }
 }
 main{
     position: relative;
@@ -151,11 +152,13 @@ a.burger-menu{
         display: block;
         font-size: 3rem;
     }
-.desktop{display: none }
+.desktop{
+    @include display(none);
+ }
 
 
 a.burger-menu:active ~ nav:nth-of-type(2){
-    display: block;
+     @include display(block);
     position: absolute;
     font-size: 20px;
     background: black;
@@ -167,115 +170,112 @@ a.burger-menu:active ~ nav:nth-of-type(2){
     }
 
     article{
-        display: flex;
-        flex-direction: column-reverse;
+        @include display('flex','column-reverse');
         margin:0;
     }
 
 
     aside{
-        border-radius: 15px;
+        @include border-radius(15px);
         position: absolute;
         z-index: 2;
         width: 200px;
-        /*height: 100px;*/
-        /*background: black;*/
         bottom: -60px;
         left: 50px;
-    }
-    aside h1{
-        font-size: 1rem;
-    }
-    aside figure img{
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin: 10px;
-    }
-    aside figure{
-        margin: 0;
-    }
-    aside figcaption{
-        font-size: 1rem;
-    }
-    aside .bolder{
-        font-size: 1rem;
+        & h1 {
+            font-size: 1rem; 
+        }
+        & figure{
+            margin: 0;
+        }
+        & img {
+            width: 40px;
+            height: 40px;
+            @include border-radius(50%);
+            margin: 10px;
+        }
+        & figcaption{
+            font-size: 1rem; 
+        }
+        & .bolder{
+            font-size: 1rem;
         margin:10px;
+        }
     }
-
+   
 
 }
 
-    @media screen and   (min-width:410px ) and  (max-width:768px ){
+    @media screen and   (min-width:410px ) and  (max-width:766px ){
 
     a.burger-menu i {
-       display: block;
+        @include display(block);
         font-size: 3rem;
 
     }
-       /* a.burger-menu:active+nav.menu-responsive{
-           display: block;
-        }*/
-
+    
         a.burger-menu:active ~ nav:nth-of-type(2){
-            display: block;
-            position: absolute;
+            @include display(block);
+            position: $position-absolute;
             font-size:20px ;
-            background: black;
+            background: $bg-black;
             z-index: 23;
 
         }
 
 
     article{
-        display: flex;
-        flex-direction: column-reverse;
+        @include display(flex,column-reverse);
         margin:0;
+        & figure {
+            margin: 0px;
+        }
+        & div{
+            width: 100%;
+            margin: 0;
+        }
+        & h1{
+            padding:20px;
+            width: 100%;
+            margin-bottom: 0;
+        }
+        & p{ 
+            margin: 0px;
+        }
     }
-    article figure{
-        margin: 0px;
-    }
-    article div{
-        width: 100%;
-        margin: 0;
-    }
-    article div h1{
-        padding:20px;
-        width: 100%;
-        margin-bottom: 0;
-     }
+   
     article div p ,  article div a {
         padding: 20px;
     }
-    article div p{
-        margin: 0;
-    }
+
    .moreInfo{
         margin-top: 0px;
         margin-bottom: 0px;
        padding-top:10px;
     }
     aside{
-        position: absolute;
+        position: $position-absolute;
         width: 60%;
         left:30%;
         top: 90%;
+        & figure{
+            margin:0px;
+            @include display(flex);
+        }
+        & img{
+            margin: 10px;
+        }
     }
-    aside figure {
-        margin: 0;
-    }
-    aside figure img {
-        margin: 10px;
-    }
+
 
     .desktop{
-        display: none;
+        @include display(none);
     }
 
 
 
 
-    /*.responsive a i{
+   /* .responsive a i{
         display: block;
         font-size: 3rem;
         position: relative;
@@ -285,57 +285,60 @@ a.burger-menu:active ~ nav:nth-of-type(2){
 
 
 }
-@media screen and    (min-width:768px ) and (max-width: 1024px)
+@media screen and    (min-width:767px ) and (max-width: 1024px)
 {
     .burger-menu{
-        display: none;
+        @include display(none);
+        
     }
     article{
-        display: flex;
-        flex-direction: column-reverse;
-        margin:0;
-    }
-    article figure{
-        margin: 0px;
-    }
-    article div{
-        width: 100%;
-        margin: 0;
-    }
-    article div h1{
-        padding:20px;
-        width: 100%;
-        margin-bottom: 0;
+        @include display(flex,column-reverse);
+        margin:$margn-zero;
+        & figure{
+            margin:$margin-zero ;
+        }
+        & div {
+            width: 100%;
+            margin: $margin-zero ;
+        }
+        & h1{
+            padding:20px;
+            width: $width*10%;
+            margin-bottom: 0;
+        }
+        & p {
+            margin: 0px;
+        }
     }
     article div p ,  article div a {
         padding: 20px;
     }
-    article div p{
-        margin: 0;
-    }
+    
     aside{
-        position: absolute;
+        //background-color: green;
+       
+        position: $position-absolute;
         width: 60%;
         left:30%;
         top: 90%;
-
-    }
-
-    aside figure{
-        margin: 0px;
-    }
-    aside figure img{
-        margin: 10px;
+        & figure {
+            @include display(flex);
+            margin: 0px;
+            
+        }
+        & img {
+        
+            margin: 10px;
+        }
     }
 }
 @media screen  and (min-width: 1024px)
 {
     .burger-menu{
-        display: none;
+        @include display(none);
     }
     article{
-        display: flex;
-        flex-direction: column-reverse;
+        @include display(flex,column-reverse);
         margin:0;
     }
     article figure{
@@ -357,7 +360,7 @@ a.burger-menu:active ~ nav:nth-of-type(2){
         margin: 0;
     }
     aside{
-        position: absolute;
+        position: $position-absolute;
         width: 60%;
         left:30%;
         top: 90%;
@@ -366,6 +369,7 @@ a.burger-menu:active ~ nav:nth-of-type(2){
 
     aside figure{
         margin: 0px;
+        @include display(flex);
     }
     aside figure img{
         margin: 10px;

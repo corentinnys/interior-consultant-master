@@ -1,0 +1,13 @@
+@mixin border-radius($px)
+{
+    border-radius: $px;
+}
+
+@mixin display($nane,$direction:''){
+    display: $nane;
+    @if ($direction!=''){
+        flex-direction: $direction;
+    }
+   
+
+}
