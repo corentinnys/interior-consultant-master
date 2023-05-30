@@ -1,374 +1,348 @@
+body > section, body {
+  background: black;
+}
 
-body>section,body{ background: black}
-
-.text-white{
-    color: white;
+.text-white {
+  color: white;
 }
 
 /* header*/
-header{
+header {
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
+}
 
+header h1 {
+  margin-left: 10px;
+  width: 140px;
+  text-align: center;
+  border: 1px solid white;
 }
-header h1{
-    margin-left: 10px;
-    width: 140px;
-    text-align: center;
-    border: 1px solid white;
-}
+
 header nav {
-    display: flex;
+  display: flex;
 }
+
 header nav:not(nav.menu-responsive) ul {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
+header nav li {
+  width: 120px;
+}
+header nav a {
+  text-decoration: none;
+}
+header nav a :hover {
+  border-bottom: 1px solid white;
+}
 
-header nav ul li {
+/*header nav ul li {
    width: 120px;
-}
-
-
-header nav ul a{
-    text-decoration: none;
-
-}
-
-header nav ul li:hover a  {
+}*/
+/*header nav ul li:hover a  {
     border-bottom: 1px solid white;
-}
-
+}*/
 /*
     main principale ( article )
 */
-article{
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-
+article {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
 }
 
 figure img {
-    width: 100%;
+  width: 100%;
 }
+
 article div {
-    margin-left: 50px;
-    width: 1000px;
+  margin-left: 50px;
+  width: 1000px;
 }
 
 article h1 {
-    color: white;
-    font-size: 3rem;
+  color: white;
+  font-size: 3rem;
 }
-article>div>p{
-    text-align: justify;
-    width: 70%;
 
+article > div > p {
+  text-align: justify;
+  width: 70%;
 }
-.moreInfo{
-    text-decoration: none;
 
-    display: block;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-size: 1.2rem;
+.moreInfo {
+  text-decoration: none;
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 1.2rem;
 }
 
 /*
 aside
 */
-aside{
-    background: black;
-    border-radius: 15px;
+aside {
+  background: black;
+  border-radius: 15px;
 }
 
-aside figure{
-    display: flex;
+aside figure {
+  display: flex;
+}
 
+aside figure img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-top: 10px;
 }
-aside figure img{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin-top:10px;
 
+aside h1, aside figcaption {
+  margin-left: 20px;
 }
-aside h1, aside figcaption{
-margin-left: 20px;
-}
-aside .bolder{
-    font-size: 2rem;
-    margin:20px
+
+aside .bolder {
+  font-size: 2rem;
+  margin: 20px;
 }
 
 /*
     footer
 */
-footer{
-    padding-top: 300px;
-    text-align: center;
-    padding-bottom: 30px;
-    font-size: 1.2rem;
-    color: gray;
-
+footer {
+  padding-top: 300px;
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 1.2rem;
+  color: gray;
 }
 
-.menu-responsive{
-    display: none;
+.menu-responsive {
+  display: none;
 }
+
 .menu-responsive ul li {
-    padding: 10px;
-    font-size: 1.2em;
-}
-main{
-    position: relative;
-
+  padding: 10px;
+  font-size: 1.2em;
 }
 
-a.burger-menu{
-    color: transparent;
+main {
+  position: relative;
 }
 
+a.burger-menu {
+  color: transparent;
+}
 
-
-@media screen and (max-width: 409px)
-{
-    main  article div  h1{
-        text-align:  center;
-        font-size: 24px;
-    }
-    main  article div  p, main  article div a{
-        text-align:  center;
-        font-size: 14px;
-    }
-
-    a.burger-menu i {
-        display: block;
-        font-size: 3rem;
-    }
-.desktop{display: none }
-
-
-a.burger-menu:active ~ nav:nth-of-type(2){
+@media screen and (max-width: 409px) {
+  main article div h1 {
+    text-align: center;
+    font-size: 24px;
+  }
+  main article div p, main article div a {
+    text-align: center;
+    font-size: 14px;
+  }
+  a.burger-menu i {
+    display: block;
+    font-size: 3rem;
+  }
+  .desktop {
+    display: none;
+  }
+  a.burger-menu:active ~ nav:nth-of-type(2) {
     display: block;
     position: absolute;
     font-size: 20px;
     background: black;
     z-index: 47;
-
+  }
+  article figure {
+    margin: 0;
+  }
+  article {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+  }
+  aside {
+    border-radius: 15px;
+    position: absolute;
+    z-index: 2;
+    width: 200px;
+    /*height: 100px;*/
+    /*background: black;*/
+    bottom: -60px;
+    left: 50px;
+  }
+  aside h1 {
+    font-size: 1rem;
+  }
+  aside figure img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+  aside figure {
+    margin: 0;
+  }
+  aside figcaption {
+    font-size: 1rem;
+  }
+  aside .bolder {
+    font-size: 1rem;
+    margin: 10px;
+  }
 }
-    article figure{
-        margin: 0
-    }
-
-    article{
-        display: flex;
-        flex-direction: column-reverse;
-        margin:0;
-    }
-
-
-    aside{
-        border-radius: 15px;
-        position: absolute;
-        z-index: 2;
-        width: 200px;
-        /*height: 100px;*/
-        /*background: black;*/
-        bottom: -60px;
-        left: 50px;
-    }
-    aside h1{
-        font-size: 1rem;
-    }
-    aside figure img{
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin: 10px;
-    }
-    aside figure{
-        margin: 0;
-    }
-    aside figcaption{
-        font-size: 1rem;
-    }
-    aside .bolder{
-        font-size: 1rem;
-        margin:10px;
-    }
-
-
+@media screen and (min-width: 410px) and (max-width: 768px) {
+  a.burger-menu i {
+    display: block;
+    font-size: 3rem;
+  }
+  /* a.burger-menu:active+nav.menu-responsive{
+      display: block;
+   }*/
+  a.burger-menu:active ~ nav:nth-of-type(2) {
+    display: block;
+    position: absolute;
+    font-size: 20px;
+    background: black;
+    z-index: 23;
+  }
+  article {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+  }
+  article figure {
+    margin: 0px;
+  }
+  article div {
+    width: 100%;
+    margin: 0;
+  }
+  article div h1 {
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  article div p, article div a {
+    padding: 20px;
+  }
+  article div p {
+    margin: 0;
+  }
+  .moreInfo {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+  }
+  aside {
+    position: absolute;
+    width: 60%;
+    left: 30%;
+    top: 90%;
+  }
+  aside figure {
+    margin: 0;
+  }
+  aside figure img {
+    margin: 10px;
+  }
+  .desktop {
+    display: none;
+  }
+  /*.responsive a i{
+      display: block;
+      font-size: 3rem;
+      position: relative;
+      left: 40px;
+      top:20px;
+  }*/
 }
-
-    @media screen and   (min-width:410px ) and  (max-width:768px ){
-
-    a.burger-menu i {
-       display: block;
-        font-size: 3rem;
-
-    }
-       /* a.burger-menu:active+nav.menu-responsive{
-           display: block;
-        }*/
-
-        a.burger-menu:active ~ nav:nth-of-type(2){
-            display: block;
-            position: absolute;
-            font-size:20px ;
-            background: black;
-            z-index: 23;
-
-        }
-
-
-    article{
-        display: flex;
-        flex-direction: column-reverse;
-        margin:0;
-    }
-    article figure{
-        margin: 0px;
-    }
-    article div{
-        width: 100%;
-        margin: 0;
-    }
-    article div h1{
-        padding:20px;
-        width: 100%;
-        margin-bottom: 0;
-     }
-    article div p ,  article div a {
-        padding: 20px;
-    }
-    article div p{
-        margin: 0;
-    }
-   .moreInfo{
-        margin-top: 0px;
-        margin-bottom: 0px;
-       padding-top:10px;
-    }
-    aside{
-        position: absolute;
-        width: 60%;
-        left:30%;
-        top: 90%;
-    }
-    aside figure {
-        margin: 0;
-    }
-    aside figure img {
-        margin: 10px;
-    }
-
-    .desktop{
-        display: none;
-    }
-
-
-
-
-    /*.responsive a i{
-        display: block;
-        font-size: 3rem;
-        position: relative;
-        left: 40px;
-        top:20px;
-    }*/
-
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .burger-menu {
+    display: none;
+  }
+  article {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+  }
+  article figure {
+    margin: 0px;
+  }
+  article div {
+    width: 100%;
+    margin: 0;
+  }
+  article div h1 {
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  article div p, article div a {
+    padding: 20px;
+  }
+  article div p {
+    margin: 0;
+  }
+  aside {
+    position: absolute;
+    width: 60%;
+    left: 30%;
+    top: 90%;
+  }
+  aside figure {
+    margin: 0px;
+  }
+  aside figure img {
+    margin: 10px;
+  }
 }
-@media screen and    (min-width:768px ) and (max-width: 1024px)
-{
-    .burger-menu{
-        display: none;
-    }
-    article{
-        display: flex;
-        flex-direction: column-reverse;
-        margin:0;
-    }
-    article figure{
-        margin: 0px;
-    }
-    article div{
-        width: 100%;
-        margin: 0;
-    }
-    article div h1{
-        padding:20px;
-        width: 100%;
-        margin-bottom: 0;
-    }
-    article div p ,  article div a {
-        padding: 20px;
-    }
-    article div p{
-        margin: 0;
-    }
-    aside{
-        position: absolute;
-        width: 60%;
-        left:30%;
-        top: 90%;
-
-    }
-
-    aside figure{
-        margin: 0px;
-    }
-    aside figure img{
-        margin: 10px;
-    }
-}
-@media screen  and (min-width: 1024px)
-{
-    .burger-menu{
-        display: none;
-    }
-    article{
-        display: flex;
-        flex-direction: column-reverse;
-        margin:0;
-    }
-    article figure{
-        margin: 0px;
-    }
-    article div{
-        width: 100%;
-        margin: 0;
-    }
-    article div h1{
-        padding:20px;
-        width: 100%;
-        margin-bottom: 0;
-    }
-    article div p ,  article div a {
-        padding: 20px;
-    }
-    article div p{
-        margin: 0;
-    }
-    aside{
-        position: absolute;
-        width: 60%;
-        left:30%;
-        top: 90%;
-
-    }
-
-    aside figure{
-        margin: 0px;
-    }
-    aside figure img{
-        margin: 10px;
-    }
-}
+@media screen and (min-width: 1024px) {
+  .burger-menu {
+    display: none;
+  }
+  article {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+  }
+  article figure {
+    margin: 0px;
+  }
+  article div {
+    width: 100%;
+    margin: 0;
+  }
+  article div h1 {
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  article div p, article div a {
+    padding: 20px;
+  }
+  article div p {
+    margin: 0;
+  }
+  aside {
+    position: absolute;
+    width: 60%;
+    left: 30%;
+    top: 90%;
+  }
+  aside figure {
+    margin: 0px;
+  }
+  aside figure img {
+    margin: 10px;
+  }
+}/*# sourceMappingURL=styles.css.map */
